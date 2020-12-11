@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Step1
+  - Step2
+  - Step3
+  - Hide1
+  - Next1
+  - Next2
+  - Next3
+  - Next4
+  - StartButton
+  - Previous1
+  - Marker1
+  - Marker2
+  - DolphiScan
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Spatial Awareness
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
