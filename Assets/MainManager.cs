@@ -7,14 +7,15 @@ public class MainManager : MonoBehaviour
 {
     public UnityEvent StepOneFinished, StepTwoFinished, StepThreeFinished;
     public UnityEvent StartButtonPressed;
-    public GameObject Step1, Step2, Step3, Step4;
+    public GameObject Step1, Step2, Step3, Step4, Step5;
     public GameObject Next1;
     public GameObject Previous1;
     public GameObject StartButton;
+    public GameObject Hide1;
 
 
     public int StepIndex = 0; //This will keep track of the currently active step of yours where 0 is the start condition and step 1 is stepIndex=1
-    public int maxStep = 4;
+    public int maxStep = 5;
 
 
     private void Start()
@@ -59,7 +60,7 @@ public class MainManager : MonoBehaviour
         if (StepIndex == 2) { StepTwo(); }
         if (StepIndex == 3) { StepThree(); }
         if (StepIndex == 4) { StepFour(); }
-        //if (StepIndex == 5) { StepFive(); }
+        if (StepIndex == 5) { StepFive(); }
 
         //Just extend this to the amount of individual steps you have
 
@@ -73,8 +74,10 @@ public class MainManager : MonoBehaviour
         Step2.SetActive(false);
         Step3.SetActive(false);
         Step4.SetActive(false);
+        Step5.SetActive(false);
 
         StartButton.SetActive(false);
+        Hide1.SetActive(true);
         Next1.SetActive(true);
         Previous1.SetActive(false);
         
@@ -87,7 +90,7 @@ public class MainManager : MonoBehaviour
         Step2.SetActive(true);
         Step3.SetActive(false);
         Step4.SetActive(false);
-
+        Step5.SetActive(false);
         Previous1.SetActive(true);
         
     }
@@ -99,6 +102,7 @@ public class MainManager : MonoBehaviour
         Step2.SetActive(false);
         Step3.SetActive(true);
         Step4.SetActive(false);
+        Step5.SetActive(false);
     }
 
     
@@ -110,9 +114,18 @@ public class MainManager : MonoBehaviour
         Step2.SetActive(false);
         Step3.SetActive(false);
         Step4.SetActive(true);
+        Step5.SetActive(false);
     }
 
-
+    public void StepFive()
+    {
+        Debug.Log("StepFiveInit");
+        Step1.SetActive(false);
+        Step2.SetActive(false);
+        Step3.SetActive(false);
+        Step4.SetActive(false);
+        Step5.SetActive(true);
+    }
 
 
 }

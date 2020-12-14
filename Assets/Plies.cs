@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Plies : MonoBehaviour
 {
-    public Text dispText;
+    public TMP_Text dispText;
     public string dispStringPlies;
     public string oldString;
     public string newString;
@@ -18,7 +19,7 @@ public class Plies : MonoBehaviour
 
     void Start()
     {
-        dispText = this.GetComponent<Text>();
+        dispText = this.GetComponent<TMP_Text>();
         dataPool = GameObject.Find("ManagerObject").GetComponent<DataPool>();
 
     }
@@ -28,7 +29,7 @@ public class Plies : MonoBehaviour
         oldString = dispStringPlies;
         newString = oldString + numberString;
         dispStringPlies = newString;
-        this.GetComponent<Text>().text = dispStringPlies;
+        this.GetComponent<TMP_Text>().text = dispStringPlies;
         Debug.Log(dispStringPlies);
 
         try
@@ -49,7 +50,7 @@ public class Plies : MonoBehaviour
     {
         WrongInput = dispStringPlies;
         dispStringPlies = dispStringEmpty;
-        this.GetComponent<Text>().text = dispStringEmpty;
+        this.GetComponent<TMP_Text>().text = dispStringEmpty;
     }
 
     

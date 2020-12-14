@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Depth : MonoBehaviour
 {
-    public Text dispText;
+    public TMP_Text dispText;
     public string dispStringDepth;
     public string oldString;
     public string newString;
@@ -18,7 +18,7 @@ public class Depth : MonoBehaviour
 
     void Start()
     {
-        dispText = this.GetComponent<Text>();
+        dispText = this.GetComponent<TMP_Text>();
         dataPool = GameObject.Find("ManagerObject").GetComponent<DataPool>();
 
     }
@@ -28,7 +28,7 @@ public class Depth : MonoBehaviour
         oldString = dispStringDepth;
         newString = oldString + numberString;
         dispStringDepth = newString;
-        this.GetComponent<Text>().text = dispStringDepth;
+        this.GetComponent<TMP_Text>().text = dispStringDepth;
         Debug.Log(dispStringDepth);
 
         try
@@ -49,7 +49,7 @@ public void Remove()
     {
         WrongInput = dispStringDepth;
         dispStringDepth = dispStringEmpty;
-        this.GetComponent<Text>().text = dispStringEmpty;
+        this.GetComponent<TMP_Text>().text = dispStringEmpty;
     }
     
 
