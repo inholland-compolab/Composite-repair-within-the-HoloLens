@@ -18,7 +18,9 @@ public class Midpoint : MonoBehaviour
 
     public Transform PlyMidepointObject;
 
-    public DataPool dataPool;
+    public DataPool dataPool; //Simple trick
+
+    public bool isFindingMidpoint = true;
 
     private void Start()
     {
@@ -27,18 +29,22 @@ public class Midpoint : MonoBehaviour
         dataPool = GameObject.Find("ManagerObject").GetComponent<DataPool>();
     }
 
-        public void Update()
+    public void Update()
     {
+        if (isFindingMidpoint)
+        {
+            midpoint = (Mark1.position + Mark2.position) * 0.5f;
+            midpointValueFromA = (midpoint - Mark1.position).magnitude;
+            Debug.Log(midpoint);
+            PlyMidepointObject.transform.position = midpoint;
+            PlyMidepointObject.localScale = new Vector3(2 * midpointValueFromA, 0.01f, 2 * midpointValueFromA);// Here is our problem. We actually do change the scaling but immediately overwrite it with this Update
 
-        midpoint = (Mark1.position + Mark2.position) * 0.5f;
-        midpointValueFromA = (midpoint - Mark1.position).magnitude;
-        Debug.Log(midpoint);
-        PlyMidepointObject.transform.position = midpoint;
-        PlyMidepointObject.localScale = new Vector3(2*midpointValueFromA, 0.01f, 2*midpointValueFromA);
-        drawPointOnCurrentTarget = midpoint;
+            drawPointOnCurrentTarget = midpoint;
 
-        dataPool.Midpointmarker = midpointValueFromA;
-        
+            dataPool.Midpointmarker = midpointValueFromA;
+        }
+
+
     }
 
 
