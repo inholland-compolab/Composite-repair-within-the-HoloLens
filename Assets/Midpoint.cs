@@ -37,6 +37,7 @@ public class Midpoint : MonoBehaviour
             midpointValueFromA = (midpoint - Mark1.position).magnitude;
             Debug.Log(midpoint);
             PlyMidepointObject.transform.position = midpoint;
+            PlyMidepointObject.up = Mark1.up;
             PlyMidepointObject.localScale = new Vector3(2 * midpointValueFromA, 0.01f, 2 * midpointValueFromA);// Here is our problem. We actually do change the scaling but immediately overwrite it with this Update
 
             drawPointOnCurrentTarget = midpoint;
