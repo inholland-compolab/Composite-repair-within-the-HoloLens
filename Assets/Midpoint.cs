@@ -16,7 +16,7 @@ public class Midpoint : MonoBehaviour
     public Vector3 midpoint;
     public Vector3 drawPointOnCurrentTarget;
 
-    public Transform PlyMidepointObject;
+    public Transform PlyMidpointObject;
 
     public DataPool dataPool;
 
@@ -29,6 +29,22 @@ public class Midpoint : MonoBehaviour
 
         public void Update()
     {
+<<<<<<< Updated upstream
+=======
+        if (isFindingMidpoint)
+        {
+            midpoint = (Mark1.position + Mark2.position) * 0.5f;
+            midpointValueFromA = (midpoint - Mark1.position).magnitude;
+            Debug.Log(midpoint);
+            PlyMidpointObject.transform.position = midpoint;
+            PlyMidpointObject.up = Mark1.up;
+            PlyMidpointObject.localScale = new Vector3(2 * midpointValueFromA, 0.01f, 2 * midpointValueFromA);
+
+            drawPointOnCurrentTarget = midpoint;
+
+            dataPool.Midpointmarker = midpointValueFromA;
+        }
+>>>>>>> Stashed changes
 
         midpoint = (Mark1.position + Mark2.position) * 0.5f;
         midpointValueFromA = (midpoint - Mark1.position).magnitude;
